@@ -20,11 +20,7 @@
     "resolveJsonModule": true,
     // advanced
     "importsNotUsedAsValues": "error",
-    "skipLibCheck": true,
-    // paths
-    "paths": {
-      "@synonymdev/slashtag*": ["./packages/*"]
-    }
+    "skipLibCheck": true
   },
-  "include": ["index.js", "lib", "test", "../../declarations.d.ts"]
+  "include": ["index.js", "lib", "test"]
 }

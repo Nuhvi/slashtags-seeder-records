@@ -1,4 +1,6 @@
+// @ts-nocheck
 import DHT from '../../index.js'
+import path from 'path'
 
 export default async function createTestnet (size = 10, opts = {}) {
   const swarm = []
@@ -12,7 +14,8 @@ export default async function createTestnet (size = 10, opts = {}) {
     ephemeral: false,
     firewalled: false,
     bootstrap: [],
-    bind: port
+    bind: port,
+    storage: opts.storage ? path.join(opts.storage, '0') : null
   })
 
   await first.ready()
@@ -24,7 +27,8 @@ export default async function createTestnet (size = 10, opts = {}) {
     const node = new DHT({
       ephemeral: false,
       firewalled: false,
-      bootstrap
+      bootstrap,
+      storage: opts.storage ? path.join(opts.storage, swarm.length.toString()) : null
     })
 
     await node.ready()
