@@ -3,6 +3,9 @@
   "version": "1.0.0-alpha.1",
   "type": "module",
   "main": "index.js",
+  "bin": {
+    "slashrouter": "./bin.js"
+  },
   "types": "types/index.d.ts",
   "scripts": {
     "test": "brittle test/*.js -cov",

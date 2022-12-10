@@ -20,7 +20,7 @@ export default class DHT extends _DHT {
       { host: '167.86.102.121', port: 45472 },
       { host: '167.86.102.121', port: 45473 }
     ]
-    
+
     super(opts)
 
     /** @type {Level<string, Uint8Array>} */
