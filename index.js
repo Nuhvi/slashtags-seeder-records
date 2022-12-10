@@ -10,10 +10,17 @@ import { COMMANDS, NS } from './lib/constants.js'
 
 export default class DHT extends _DHT {
   /**
-   * @param {object} opts
-   * @param {string} opts.storage Disk storage
+   * @param {object} [opts]
+   * @param {string} [opts.storage] Disk storage
    */
-  constructor (opts) {
+  constructor (opts = {}) {
+    // @ts-ignore
+    opts.bootstrap = opts.bootstrap || [
+      { host: '167.86.102.121', port: 45471 },
+      { host: '167.86.102.121', port: 45472 },
+      { host: '167.86.102.121', port: 45473 }
+    ]
+    
     super(opts)
 
     /** @type {Level<string, Uint8Array>} */
